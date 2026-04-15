@@ -1,0 +1,94 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&family=JetBrains+Mono:wght@400;700&family=Orbitron:wght@400;700;900&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+  --font-digital: "Orbitron", sans-serif;
+}
+
+@layer base {
+  body {
+    @apply bg-[#050505] text-white antialiased;
+  }
+}
+
+@layer components {
+  .neon-border {
+    @apply border border-white/10 shadow-[0_0_15px_rgba(255,255,255,0.05)];
+  }
+  
+  .neon-text-cyan {
+    @apply text-cyan-400 shadow-[0_0_10px_rgba(34,211,238,0.5)];
+  }
+
+  .glitch {
+    position: relative;
+    text-shadow: 0.05em 0 0 rgba(255, 0, 0, 0.75),
+                -0.025em -0.05em 0 rgba(0, 255, 0, 0.75),
+                0.025em 0.05em 0 rgba(0, 0, 255, 0.75);
+    animation: glitch 500ms infinite;
+  }
+
+  @keyframes glitch {
+    0% {
+      text-shadow: 0.05em 0 0 rgba(255, 0, 0, 0.75),
+                  -0.05em -0.025em 0 rgba(0, 255, 0, 0.75),
+                  -0.025em 0.05em 0 rgba(0, 0, 255, 0.75);
+    }
+    14% {
+      text-shadow: 0.05em 0 0 rgba(255, 0, 0, 0.75),
+                  -0.05em -0.025em 0 rgba(0, 255, 0, 0.75),
+                  -0.025em 0.05em 0 rgba(0, 0, 255, 0.75);
+    }
+    15% {
+      text-shadow: -0.05em -0.025em 0 rgba(255, 0, 0, 0.75),
+                  0.025em 0.025em 0 rgba(0, 255, 0, 0.75),
+                  -0.05em -0.05em 0 rgba(0, 0, 255, 0.75);
+    }
+    49% {
+      text-shadow: -0.05em -0.025em 0 rgba(255, 0, 0, 0.75),
+                  0.025em 0.025em 0 rgba(0, 255, 0, 0.75),
+                  -0.05em -0.05em 0 rgba(0, 0, 255, 0.75);
+    }
+    50% {
+      text-shadow: 0.025em 0.05em 0 rgba(255, 0, 0, 0.75),
+                  0.05em 0 0 rgba(0, 255, 0, 0.75),
+                  0 -0.05em 0 rgba(0, 0, 255, 0.75);
+    }
+    99% {
+      text-shadow: 0.025em 0.05em 0 rgba(255, 0, 0, 0.75),
+                  0.05em 0 0 rgba(0, 255, 0, 0.75),
+                  0 -0.05em 0 rgba(0, 0, 255, 0.75);
+    }
+    100% {
+      text-shadow: -0.025em 0 0 rgba(255, 0, 0, 0.75),
+                  -0.025em -0.025em 0 rgba(0, 255, 0, 0.75),
+                  -0.025em -0.05em 0 rgba(0, 0, 255, 0.75);
+    }
+  }
+}
+
+
+/* Custom Range Input Styling */
+input[type='range']::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 12px;
+  height: 12px;
+  background: #22d3ee;
+  border-radius: 50%;
+  cursor: pointer;
+  box-shadow: 0 0 10px rgba(34, 211, 238, 0.8);
+}
+
+input[type='range']::-moz-range-thumb {
+  width: 12px;
+  height: 12px;
+  background: #22d3ee;
+  border-radius: 50%;
+  cursor: pointer;
+  border: none;
+  box-shadow: 0 0 10px rgba(34, 211, 238, 0.8);
+}
+
